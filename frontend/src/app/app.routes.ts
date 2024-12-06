@@ -15,6 +15,10 @@ import { AuthCallbackComponent } from './pages/auth/login/components/auth-callba
 import { ClubesPage } from './pages/clubes/clubes.page';
 import { TorneoAmericanoPage } from './pages/torneo-americano/torneo-americano.page';
 import { loggedGuard } from './guards/logged.guard';
+import { InicioComponent } from './pages/campeonatos-internos/component/inicio/inicio.component';
+import { CampeonatosInternosPage } from './pages/campeonatos-internos/campeonatos-internos.page';
+import { ComenzarCampeonatoComponent } from './pages/campeonatos-internos/component/comenzar-campeonato/comenzar-campeonato.component';
+import { PartidosCampeonatoComponent } from './pages/campeonatos-internos/component/partidos-campeonato/partidos-campeonato.component';
 
 export const routes: Routes = [
   {
@@ -91,6 +95,26 @@ export const routes: Routes = [
   {
     path: 'torneo',
     component: TorneoAmericanoPage,
+    canActivate: [loggedGuard]
+  },
+  {
+    path: 'inicioCampeonato',
+    component: InicioComponent,
+    canActivate: [loggedGuard]
+  },
+  {
+    path: 'campeonatoInterno',
+    component: CampeonatosInternosPage,
+    canActivate: [loggedGuard]
+  },
+  {
+    path: 'campeonatoSeleccion',
+    component: ComenzarCampeonatoComponent,
+    canActivate: [loggedGuard]
+  },
+  {
+    path: 'partidos',
+    component: PartidosCampeonatoComponent,
     canActivate: [loggedGuard]
   },
 ];

@@ -1,0 +1,27 @@
+<main>
+    <h1>CAMPEONATO INTERNO:</h1>
+    <br>
+    <H3>Lista de Partidos:</H3>
+    <br>
+    <br>
+    <ul>
+        <li *ngFor="let partido of partidos">
+            <h4>DETALLES DEL PARTIDO: </h4>
+            <p>
+                <strong>Jugador1: </strong>
+                {{partido.jugador1.nombre}} {{partido.jugador1.apellido}}
+            </p>
+            <h4> VS</h4>
+            <p>
+                <strong>Jugador2: </strong>
+                {{ partido.jugador2.nombre }}  {{partido.jugador2.apellido}}
+            </p>
+            <p>
+                <strong> Fecha: </strong>
+                {{ partido.fecha }}
+            </p>
+            <br>
+        </li>
+    </ul>
+</main>
+

@@ -49,4 +49,12 @@ export class PinesComponent {
   async crearTorneo(){
     this.router.navigate(['/torneo'])
   }
+
+  async inicioCampeonato(){
+    this.router.navigate(['/inicioCampeonato'])
+  }
+
+  async seleccionCampeonato(){
+    this.router.navigate(['/campeonatoSeleccion'])
+  }
 }

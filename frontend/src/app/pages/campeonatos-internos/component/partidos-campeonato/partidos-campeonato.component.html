@@ -1,0 +1,29 @@
+<main>
+    <app-comenzar-campeonato *ngIf="!editarTorneoVisible"></app-comenzar-campeonato>
+    <div *ngIf="editarTorneoVisible">
+      
+        <h2> CAMPEONATO INTERNO</h2>
+  
+        <li *ngFor="let partido of partidos">
+            <h4>DETALLES DEL PARTIDO: </h4>
+            <p>
+                <strong>Jugador1: </strong>
+                {{partido.jugador1.nombre}} {{partido.jugador1.apellido}}
+            </p>
+            <h4> VS</h4>
+            <p>
+                <strong>Jugador2: </strong>
+                {{ partido.jugador2.nombre }}  {{partido.jugador2.apellido}}
+            </p>
+            <p>
+                <strong> Fecha: </strong>
+                {{ partido.fecha }}
+            </p>
+            <br>
+        </li>
+  
+        <!-- Botón para finalizar el torneo 
+        <button (click)="">Finalizar Torneo</button> -->
+      </div>
+  </main>
+  

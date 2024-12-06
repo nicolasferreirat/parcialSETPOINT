@@ -100,6 +100,10 @@ CREATE TABLE IF NOT EXISTS AMERICANOS (
   fecha_registro TIMESTAMP NULL
 );
 
+CREATE TABLE IF NOT EXISTS CAMPEONATO_INTERNO (
+  nombreUsuario VARCHAR(100)
+);
+
 -- Agregar llaves foráneas después de la creación de las tablas
 ALTER TABLE CREA
 ADD CONSTRAINT fk_crea_usuario FOREIGN KEY (id_usuario) REFERENCES USUARIOS(id),
@@ -133,8 +137,13 @@ VALUES
 ('Federico', 'Chingotto', 'FedeC', 'federico.chingotto@example.com', NULL, crypt('Ch1ng0tt0!', gen_salt('bf'))),
 ('Martín', 'Di Nenno', 'MartinDN', 'martin.dinenno@example.com', NULL, crypt('D1N3nn0!', gen_salt('bf'))),
 ('Agustín', 'Tapia', 'AgusT', 'agustin.tapia@example.com', NULL, crypt('T4p1aP4d3l!', gen_salt('bf'))),
+('Kevin', 'Fernnadez', 'KevinF', 'franco.stupaczdk@example.com', NULL, crypt('StuP4czduk!', gen_salt('bf'))),
+('Lucas', 'Martinez', 'LucasM', 'franco.stupddaczuk@example.com', NULL, crypt('StuP4czur!', gen_salt('bf'))),
+('Fernando', 'Oliva', 'FernaO', 'franco.stuzuk@example.com', NULL, crypt('StuP4czuo!', gen_salt('bf'))),
+('Augusto', 'Duarte', 'GustoD', 'francopaczuk@example.com', NULL, crypt('StuP4czpk!', gen_salt('bf'))),
 ('Franco', 'Stupaczuk', 'StupaF', 'franco.stupaczuk@example.com', NULL, crypt('StuP4czuk!', gen_salt('bf'))),
-('Sanyo', 'Gutiérrez', 'SanyoG', 'sanyo.gutierrez@example.com', NULL, crypt('S4ny0G!', gen_salt('bf')));
+('Sanyo', 'Gutiérrez', 'SanyoG', 'sanyo.gutierrez@example.com', NULL, crypt('S4ny0G!', gen_salt('bf'))); 
+--15 usuarios registrados
 
 INSERT INTO CLUBES (nombre_club, direccion, contacto, cant_pistas)
 VALUES 

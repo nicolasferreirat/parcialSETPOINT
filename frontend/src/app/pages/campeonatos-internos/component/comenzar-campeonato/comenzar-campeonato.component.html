@@ -1,0 +1,29 @@
+<main>
+    <h1>CAMPEONATO INTERNO:</h1>
+    <br>
+    <H3>Usuarios Registrados:</H3>
+    <br>
+    <ul>
+        <li *ngFor="let usuario of usuarios">
+            <strong>USUARIOS:</strong>
+            <p>ID: {{usuario.id}} | JUGADOR:  {{usuario.nombre}}</p> 
+
+        </li>
+    </ul>
+</main>
+<br>
+<br>
+
+<form [formGroup]="torneoForm" (ngSubmit)="iniciarTorneo()">
+    <h2>CAMPEONATOS INTERNOS</h2>
+    <br>
+    <h3>Escriba los ID de los jugadores a participar del campeonato:</h3>
+    <p>Primeros 3 jugadores son OBLIGATORIOS</p>
+    <div *ngFor="let jugador of [1,2,3,4,5,6,7,8,9,10,11,12]; let i = index">
+        <input [formControlName]="'nombreJugador' + (i + 1)" type="text" placeholder="Nombre del Jugador {{i+1}}" />
+    </div>
+    <p>{{ this.errorMensaje }}</p>
+    <br> 
+    <button type="submit">Iniciar Torneo</button>
+</form>
+

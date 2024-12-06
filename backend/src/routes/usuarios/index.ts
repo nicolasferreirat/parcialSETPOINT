@@ -188,7 +188,38 @@ const usuarioRoute: FastifyPluginAsync = async (
     },
   });
   //----------------------------------------------------------------------------------------------------------------------------
-
+  fastify.get("/doceusuarios", {
+    //onRequest: [fastify.authenticate],
+    schema: {
+      tags: ["Usuarios"],
+      response: {
+        200: {
+          type: "array",
+          items: {
+            type: "object",
+            properties: {
+              id: { type: "integer" },
+              nombre: { type: "string" },
+              apellido: { type: "string" },
+              nombre_usuario: { type: "string" },
+              mail: { type: "string" },
+            },
+          },
+        },
+      },
+    },
+    handler: async (request, reply) => {
+      try {
+        const result = await db.query(
+          `SELECT id, nombre, apellido, nombre_usuario, mail FROM usuarios LIMIT ${12}`
+        );
+        const usuarios = result.rows;
+        return usuarios;
+      } catch (error) {
+        reply.status(500).send({ error: "Error al obtener los 12 usuarios" });
+      }
+    },
+  });
   //------------------------------------------GET por id (ruta autenticada) ----------------------------------------------------
   fastify.get("/:id", {
     onRequest: [fastify.authenticate],
